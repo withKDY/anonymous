@@ -36,7 +36,8 @@ public class Main {
                 i++;
             }
 
-            set.forEach(list::add);
+//            set.forEach(list::add);
+            list.addAll(set);
 
             Collections.sort(list);
             System.out.println(list);
