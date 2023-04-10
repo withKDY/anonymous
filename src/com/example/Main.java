@@ -25,13 +25,11 @@ public class Main {
 //            System.out.println(mf3.calc(x, y));
 //            System.out.println(mf4.calc(x, y));
 
-            Set<Integer> set = new HashSet<>();
+            Set<Integer> set = new HashSet<>(), paramSet = new HashSet<>(Arrays.asList(3, 4, 15));
             List list =  new ArrayList<>();
-            Set<Integer> paramSet = new HashSet<>(Arrays.asList(3, 4, 15));
+            int i = list.size(), setSize = set.size();
 
             list.addAll(paramSet);
-
-            int i = list.size(), setSize = set.size();
 
             while (i < 6) {
                 set.add((int) (Math.random() * 45) + 1);
