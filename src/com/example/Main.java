@@ -21,14 +21,16 @@ public class Main {
             Set<Integer> set = new HashSet<>(), paramSet = new HashSet<>(Arrays.asList(x, y, z));
             int i, setSize;
             List list =  new ArrayList<>();
-            list.addAll(paramSet);
 
+
+            for (Integer num : paramSet)
+                if (num > 45)
+                    paramSet.remove(num);
+
+            list.addAll(paramSet);
              i = list.size();
              setSize = set.size();
 
-             for (Integer num : paramSet)
-                 if (num > 45)
-                     throw new RuntimeException();
 
             while (i < 6) {
                 set.add((int) (Math.random() * 45) + 1);
