@@ -22,12 +22,13 @@ public class Main {
             int i, setSize;
             List list =  new ArrayList<>();
 
-
             for (Integer num : paramSet)
                 if (num > 45)
                     paramSet.remove(num);
 
+            paramSet.removeAll(Collections.singleton(0));
             list.addAll(paramSet);
+
             i = list.size();
             setSize = set.size();
 
