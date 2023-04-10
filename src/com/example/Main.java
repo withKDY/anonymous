@@ -27,8 +27,11 @@ public class Main {
 
             Set<Integer> set = new HashSet<>();
             List list =  new ArrayList<>();
+            Set<Integer> paramSet = new HashSet<>(Arrays.asList(3, 4, 15));
 
-            int i = 0, setSize = set.size();
+            list.addAll(paramSet);
+
+            int i = list.size(), setSize = set.size();
 
             while (i < 6) {
                 set.add((int) (Math.random() * 45) + 1);
@@ -60,6 +63,5 @@ public class Main {
 
     private interface MyFunction { // 함수형 인터페이스
         int calc(int x, int y); // 추상 메소드
-
     }
 }
