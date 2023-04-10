@@ -26,14 +26,16 @@ public class Main {
 //            System.out.println(mf4.calc(x, y));
 
             Set<Integer> set = new HashSet<>();
-            Random random = new Random();
             List list =  new ArrayList<>();
 
-            int i = 0;
+            int i = 0, setSize = set.size();
 
-            while (i < 11) {
-                set.add(random.nextInt(100));
-                i++;
+            while (i < 6) {
+                set.add((int) (Math.random() * 45) + 1);
+                if (setSize != set.size()) {
+                    setSize = set.size();
+                    i++;
+                }
             }
 
 //            set.forEach(list::add);
@@ -42,7 +44,14 @@ public class Main {
             Collections.sort(list);
             System.out.println(list);
 
+
             Thread.sleep(1000);
+
+            Runnable r = () -> {
+                System.out.println("로또 번호");
+            };
+
+            r.run();
 
         }catch (InterruptedException e) {
             e.printStackTrace();
