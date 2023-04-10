@@ -28,8 +28,8 @@ public class Main {
                     paramSet.remove(num);
 
             list.addAll(paramSet);
-             i = list.size();
-             setSize = set.size();
+            i = list.size();
+            setSize = set.size();
 
 
             while (i < 6) {
@@ -45,7 +45,6 @@ public class Main {
 
             Collections.sort(list);
             System.out.println(list);
-
 
             Thread.sleep(1000);
 
