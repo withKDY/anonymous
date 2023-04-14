@@ -2,6 +2,8 @@ package com.example;
 
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class Main {
 
@@ -130,7 +132,6 @@ public class Main {
 
             List<Integer> list = Arrays.stream(numberList).distinct().sorted(Collections.reverseOrder()).collect(Collectors.toList());
 
-            System.out.println(list);
             System.out.println(Arrays.stream(numberList).count());
 
             // 람다 활용 map 예제
@@ -144,6 +145,7 @@ public class Main {
             map.forEach((name, e) -> {
                 if (e instanceof Integer) {
                     System.out.println("숫자 = " + e);
+                    list.add((Integer) e);
                 } else if (e instanceof  String) {
                     System.out.println("문자 = " + e);
                 } else if (e instanceof Boolean) {
@@ -151,7 +153,16 @@ public class Main {
                 } else {
                     System.out.println("그외 = " + e);
                 }
+
             });
+
+            System.out.println(list);
+
+            List<String> strList = new ArrayList<>();
+
+            list.forEach(e -> strList.addAll(Collections.singleton(e.toString())));
+
+            System.out.println(String.join("", strList));
 
             Runnable r = () -> {
                 System.out.println("stream 연습 중");
