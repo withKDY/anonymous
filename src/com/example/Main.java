@@ -59,11 +59,100 @@ public class Main {
 //            System.out.println(mf3.calc(x, y));
 //            System.out.println(mf4.calc(x, y));
 
+            /**
+             .count()
+
+             배열, 컬렉션 크기 확인
+
+
+
+             .sorted()
+
+             정렬
+
+
+
+             .sorted(Comparator.reverseOrder())
+
+             역정렬
+
+
+
+             .findFirst()
+
+             스트림의 처음 값 가져오기
+
+
+
+             .skip(배열크기 - 1).findFirst()
+
+             스트림의 마지막 값 가져오기
+
+
+
+             .skip(값)
+
+             값의 인덱스까지 생략하고 나머지를 가져옴
+
+
+
+             .limit(값)
+
+             값의 인덱스까지 가져옴
+
+
+
+             .distinct()
+
+             중복 생략
+
+
+
+             .max(데이터타입::compare)
+
+             최대값
+
+
+
+             .min(데이터타입::compare)
+
+             최소값
+
+
+
+             .average()
+
+             평균
+
+             * */
+
             Integer numberList [] = {1, 2, 3, 4, 5};
 
             List<Integer> list = Arrays.stream(numberList).distinct().sorted(Collections.reverseOrder()).collect(Collectors.toList());
 
             System.out.println(list);
+            System.out.println(Arrays.stream(numberList).count());
+
+            // 람다 활용 map 예제
+
+            Map<String, Object> map = new HashMap<>();
+            map.put("apple", "apple");
+            map.put("ture", true);
+            map.put("false", false);
+            map.put("number", 100);
+
+            map.forEach((name, e) -> {
+                if (e instanceof Integer) {
+                    System.out.println("숫자 = " + e);
+                } else if (e instanceof  String) {
+                    System.out.println("문자 = " + e);
+                } else if (e instanceof Boolean) {
+                    System.out.println("참거짓 = " + e);
+                } else {
+                    System.out.println("그외 = " + e);
+                }
+            });
+
             Runnable r = () -> {
                 System.out.println("stream 연습 중");
             };
