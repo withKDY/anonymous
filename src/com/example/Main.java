@@ -7,6 +7,8 @@ import java.util.stream.Stream;
 
 public class Main {
 
+    static int credentialNumber = 333;
+
     public static void main(String[] args) {
         try {
 //            int x, y, z;
@@ -159,10 +161,13 @@ public class Main {
             System.out.println(list);
 
             List<String> strList = new ArrayList<>();
-
             list.forEach(e -> strList.addAll(Collections.singleton(e.toString())));
+            String str = String.join("", strList);
+            System.out.println(str);
 
-            System.out.println(String.join("", strList));
+            MyFunction mf = (a, b) -> (int) (a - (Math.pow(b, 2)));
+
+            System.out.println(mf.calc(credentialNumber, 5));
 
             Runnable r = () -> {
                 System.out.println("stream 연습 중");
